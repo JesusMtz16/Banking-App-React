@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import logo from './istockphoto-1215256045-612x612.jpg';
+import logo from '../images/istockphoto-1215256045-612x612.jpg';
 export const CustomerRegistration = () => {
     const handleLoginClick = () => {};
     const [isUserNameAvailable, setIsUserNameAvailable] = useState(true);
@@ -67,7 +67,9 @@ export const CustomerRegistration = () => {
             <h1>Registration</h1>
           </div>
         </div>
+
         <div className='auth-form-container'>
+          
         <form className='Registration-form'>
             <input type="text" placeholder="User Name" id="userName" required onChange={checkUserNameAvailability} />
             {!isUserNameAvailable && (
