@@ -1,9 +1,9 @@
-import React,{useState} from 'react';
-import logo from '../images/istockphoto-1215256045-612x612.jpg';
-import Login from '../Login';
+import React, { useState } from 'react';
+import logo from '../assets/istockphoto-1215256045-612x612.jpg';
+import Login from '../components/Login';
 
-const CustomerLogin = () =>{
-    return(
+const CustomerLogin = () => {
+    return (
         <div>
             <div className="header">
                 <img src={logo} alt="Logo" className="logo" />
@@ -11,7 +11,7 @@ const CustomerLogin = () =>{
                     <h1>Login</h1>
                 </div>
             </div>
-            <Login/>
+            <Login />
         </div>
     )
 }
