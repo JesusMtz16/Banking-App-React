@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../assets/istockphoto-1215256045-612x612.jpg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -37,7 +39,7 @@ const ForgotPassword = () => {
           onChange={handleEmailChange}
           required
         />
-        <button type="submit">Reset Password</button>
+        <Button type="submit">Reset Password</Button>
       </form>
     </div>
   );

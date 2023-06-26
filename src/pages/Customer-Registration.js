@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import logo from '../assets/istockphoto-1215256045-612x612.jpg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom'
+
+
 export const CustomerRegistration = () => {
-  const handleLoginClick = () => { };
   const [isUserNameAvailable, setIsUserNameAvailable] = useState(true);
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -79,13 +83,11 @@ export const CustomerRegistration = () => {
           <input type="password" placeholder="Password" id="password" value={password} onChange={handlePasswordChange} required />
           <input type="password" placeholder="Confirm Password" id="confirmPassword" value={confirmPassword} onChange={handleConfirmPasswordChange} required />
           {passwordError && <p style={{ color: 'red' }}>{passwordError}</p>}
-          <button on onClick={handleRegister}>Register</button>
+          <Button on onClick={handleRegister}>Register</Button>
         </form>
         <p>
-          Already have a customer account?{' '}
-          <a href="#" onClick={handleLoginClick}>
-            Log In Here
-          </a>
+          Already have a customer account? 
+          <Link class="nav-link" to="/login">Log in Here </Link>
         </p>
       </div>
       <footer className="footer">
