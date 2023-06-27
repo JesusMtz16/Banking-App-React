@@ -8,7 +8,7 @@ function Login(props) {
     <div className="Auth-form-container">
       <form className="Auth-form">
         <div className="Auth-form-content">
-          <h3 className="Auth-form-title">LogIn</h3>
+          <h3 id="align-left">LogIn</h3>
           <div className="form-group mt-3">
             <input
               type="text"
@@ -23,14 +23,17 @@ function Login(props) {
               placeholder="Enter password"
             />
           </div>
-          <div>
-            <a href="#">Forgot password</a><Button type="submit"> Login </Button>
+          <div className="d-flex justify-content-between align-items-center mt-3">
+            <a href="/forgotPassword">Forgot password</a><Button type="submit"> Login </Button>
           </div>
           <div className="forgot-password text-right mt-2">
             
           </div>
         </div>
       </form>
+      <footer className="footer">
+        <p>© 2023 Cogent Banking App. All rights reserved.</p>
+      </footer>
     </div>
   )
 }

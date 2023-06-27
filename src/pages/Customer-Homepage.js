@@ -15,9 +15,11 @@ const CustomerHomepage = () => {
             
             <Login />
             <div className='Auth-form-container'>
-                <div className='Auth-form'>
-                Not a Customer?
-                <Link class="nav-link" to="registration">Register in Here </Link>
+            <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
+            <span>Not a Customer?</span>
+                <Link className="nav-link" to="registration" style={{ marginLeft: '10px' }}>
+                    Register in Here
+                </Link>
                 </div>
             </div>
         </div>
