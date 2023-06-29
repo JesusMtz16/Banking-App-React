@@ -66,6 +66,9 @@ button{
   position: absolute;
   right: 100px;
   color:#0f2027;
+  display: flex;
+  align-items: center;
+  gap: 40px; 
 }
 .footer {
   background-color: rgb(116, 149, 166);
