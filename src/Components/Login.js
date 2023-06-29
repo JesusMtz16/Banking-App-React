@@ -1,41 +1,39 @@
-import React from "react"
+import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
+import logo from '../assets/istockphoto-1215256045-612x612.jpg';
 
-// export default function (props) {
 function Login(props) {
   return (
-    <div className="Auth-form-container">
-      <form className="Auth-form">
-        <div className="Auth-form-content">
-          <h3 id="align-left">LogIn</h3>
-          <div className="form-group mt-3">
-            <input
-              type="text"
-              className="form-control mt-1"
-              placeholder="Enter User Name"
-            />
-          </div>
-          <div className="form-group mt-3">
-            <input
-              type="password"
-              className="form-control mt-1"
-              placeholder="Enter password"
-            />
-          </div>
-          <div className="d-flex justify-content-between align-items-center mt-3">
-            <a href="/forgotPassword">Forgot password</a><Button type="submit"> Login </Button>
-          </div>
-          <div className="forgot-password text-right mt-2">
-            
-          </div>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", backgroundColor:"white", width:"100vh", padding:"30px",borderRadius:"5px" }}>
+      <div style={{ display: "flex", alignItems: "center", width: "50%" }}>
+        <div style={{ textAlign: "center" }}>
+          <img src={logo} alt="Logo" style={{ width: "200px" }} />
+          <p style={{ color: "black" }}>Your Personal Banking Partner</p>
         </div>
-      </form>
-      <footer className="footer">
-        <p>© 2023 Cogent Banking App. All rights reserved.</p>
-      </footer>
+      </div>
+      <div style={{ display: "flex", alignItems: "center", width: "75%", justifyContent: "center" }}>
+        <div style={{ backgroundColor: "rgb(116, 149, 166)", borderRadius: "10px", padding: "20px", width: "80%" }}>
+          <form>
+            <h3 style={{ textAlign: "left", color: "#ffffff" }}>Log In</h3>
+            <div className="form-group">
+              <input type="text" className="form-control" placeholder="Enter User Name" style={{ marginBottom: "10px", padding: "10px", borderRadius: "5px", border: "1px solid #ccc", width: "100%" }} />
+            </div>
+            <div className="form-group">
+              <input type="password" className="form-control" placeholder="Enter Password" style={{ marginBottom: "10px", padding: "10px", borderRadius: "5px", border: "1px solid #ccc", width: "100%" }} />
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <a href="/forgotPassword" style={{ color: "blue" }}>Forgot password</a>
+              <Button type="submit" style={{color:"black", width: "100px", backgroundColor: "#ccc", borderRadius: "10px", border: "1px solid #ccc", cursor: "pointer" }}>Login</Button>
+            </div>
+          </form>
+          <footer className="footer">
+            <p style={{ color: "#ffffff" }}>© 2023 Cogent Banking App. All rights reserved.</p>
+          </footer>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
 export default Login;
