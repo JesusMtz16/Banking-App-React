@@ -118,3 +118,14 @@ label {
 #align-left{
   text-align: left;
 }
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+}
+
+.content {
+  flex-grow: 1;
+}
