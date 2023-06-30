@@ -5,7 +5,7 @@ import AddBeneficiary from "./Customer-AddBeneficiary";
 import RemoveBeneficiary from "./Customer-RemoveBeneficiary";
 import TransferAmount from "./Customer-TranseferAmount";
 import ViewStatement from "./Customer-ViewStatement";
-
+import Dashboard from "../Components/Dashboard";
 
 const CustomerViewDashboard = () => {
   const [selectedLink, setSelectedLink] = useState(null);
@@ -27,7 +27,7 @@ const CustomerViewDashboard = () => {
       case "viewStatement":
         return <ViewStatement />;
       default:
-        return null;
+        return <Dashboard/>;
     }
   };
 

@@ -13,6 +13,7 @@ import CustomerRemoveBeneficiary from './pages/Customer-RemoveBeneficiary';
 import CustomerTranseferAmount from './pages/Customer-TranseferAmount';
 import CustomerViewStatement from './pages/Customer-ViewStatement';
 import StaffLogin from './pages/Staff-Login';
+import Dashboard from './Components/Dashboard';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="removeBeneficiary" element={<CustomerRemoveBeneficiary />} />
         <Route path="transferAmount" element={<CustomerTranseferAmount />} />
         <Route path="viewStatement" element={<CustomerViewStatement />} />
+        <Route path="dashboard" element={<Dashboard />} />
       </Routes>
     </div>
   );
