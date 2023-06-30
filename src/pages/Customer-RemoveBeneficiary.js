@@ -1,3 +1,4 @@
+import React from 'react';
 const CustomerRemoveBeneficiary = () => {
 return(
     <h1>CustomerRemoveBeneficiary is working!</h1>

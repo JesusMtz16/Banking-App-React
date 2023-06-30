@@ -1,3 +1,4 @@
+import React from 'react';
 const CustomerViewStatement = () => {
 return(
     <h1>CustomerViewStatement is working!</h1>
