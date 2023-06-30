@@ -49,4 +49,3 @@ const CustomerViewDashboard = () => {
 };
 
 export default CustomerViewDashboard;
-// // >>>>>>> bc774106500ab6fdcf32a7dd85e6f1d321e4ae5d
