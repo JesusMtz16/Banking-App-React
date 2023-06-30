@@ -3,6 +3,7 @@ import logo from '../assets/istockphoto-1215256045-612x612.jpg';
 import Login from '../components/Login';
 import { Link } from 'react-router-dom'
 
+
 const CustomerHomepage = () => {
     return (
         <div>
@@ -15,11 +16,11 @@ const CustomerHomepage = () => {
 
             <Login />
             <div className='Auth-form-container'>
-                <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
-                    <span>Not a Customer?</span>
-                    <Link className="nav-link" to="/registration" style={{ marginLeft: '10px' }}>
-                        Register in Here
-                    </Link>
+            <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
+            <span>Not a Customer?</span>
+                <Link className="nav-link" to="registration" style={{ marginLeft: '10px', color: 'red' }}>
+                    Register in Here
+                </Link>
                 </div>
             </div>
 

@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import logo from '../assets/istockphoto-1215256045-612x612.jpg';
+import React from "react";
+import logo from "../assets/istockphoto-1215256045-612x612.jpg";
+
 import { Link } from 'react-router-dom'
 
 import Col from 'react-bootstrap/Col';
@@ -9,23 +10,20 @@ import Logout from '../components/Logout';
 
 
 const CustomerViewDashboard = () => {
-    return (
-        <div>
-            <div className="header">
-                <img src={logo} alt="Logo" className="logo" />
-                <div>
-                    <h1>Profile</h1>
-                </div>
-                <div>
-                    <Logout />
-                </div>
-                <div>
-                    <h1>Welcome USER NAME</h1>
-                </div>
-            </div>
+  return (
+    <div>
+      <div className="header">
+        <img src={logo} alt="Logo" className="logo" />
+        <div className="header-text">
+          <a href="/profile">Profile</a>
+          <span> | </span>
+          <a href="/logout">Logout</a>
+          <span> | </span>
+          <span>Welcome, John Doe!</span>
+        </div>
+      </div>
 
-
-            <div>
+      <div>
                 <Row className="Auth-form-container" >
                     <Col className='Auth-form'>
                         <nav>
@@ -46,24 +44,9 @@ const CustomerViewDashboard = () => {
                     </Col>
                 </Row>
             </div>
-
-            <div className='Auth-form-container'>
-                <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
-                    <span>Not a Customer?</span>
-                    <Link className="nav-link" to="/registration" style={{ marginLeft: '10px' }}>
-                        Register in Here
-                    </Link>
-                </div>
-            </div>
-
-            <div>
-                <footer className="footer">
-                    <p>© 2023 Cogent Banking App. All rights reserved.</p>
-                </footer>
-            </div>
-
-        </div>
-    )
-}
+    </div>
+  );
+};
 
 export default CustomerViewDashboard;
+// // >>>>>>> bc774106500ab6fdcf32a7dd85e6f1d321e4ae5d

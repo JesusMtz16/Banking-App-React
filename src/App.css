@@ -17,13 +17,23 @@ padding: 20px;
   align-items: center;
   padding: 10px;
 }
-input{
-  margin-top: 20px;
+.Registration-form input {
+  margin-bottom: 10px; /* Add margin-bottom property */
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
   width: 300px;
 }
+.Registration-form button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 100px;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
 button{
   margin: 10px;
   padding: 10px;
@@ -56,6 +66,9 @@ button{
   position: absolute;
   right: 100px;
   color:#0f2027;
+  display: flex;
+  align-items: center;
+  gap: 40px; 
 }
 .footer {
   background-color: rgb(116, 149, 166);

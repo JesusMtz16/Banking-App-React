@@ -17,7 +17,7 @@ function App() {
         <Route path="registration" element={<CustomerRegistration />} />
         <Route path="login" element={<CustomerLogin />} />
         <Route path="forgotPassword" element={<ForgotPassword />} />
-        <Route path="viewDashboard" element={<CustomerViewDashboard />} />
+        <Route path="dashboard" element={<CustomerViewDashboard />} />
       </Routes>
     </div>
   );
