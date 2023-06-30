@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import CustomerHomepage from './pages/Customer-Homepage';
 import { CustomerRegistration } from './pages/Customer-Registration';
@@ -13,21 +12,18 @@ import CustomerAddBeneficiary from './pages/Customer-AddBeneficiary';
 import CustomerRemoveBeneficiary from './pages/Customer-RemoveBeneficiary';
 import CustomerTranseferAmount from './pages/Customer-TranseferAmount';
 import CustomerViewStatement from './pages/Customer-ViewStatement';
+import StaffLogin from './pages/Staff-Login';
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<CustomerHomepage />} />
+<<<<<<< HEAD
         <Route path="registration" element={<CustomerRegistration />} />
         <Route path="login" element={<CustomerLogin />} />
         <Route path="forgotPassword" element={<ForgotPassword />} />
         <Route path="dashboard" element={<CustomerViewDashboard />} />
-        <Route path="createAccount" element={<CustomerCreateAccount />} />
-        <Route path="addBeneficiary" element={<CustomerAddBeneficiary />} />
-        <Route path="removeBeneficiary" element={<CustomerRemoveBeneficiary />} />
-        <Route path="transferAmount" element={<CustomerTranseferAmount />} />
-        <Route path="viewStatement" element={<CustomerViewStatement />} />
       </Routes>
     </div>
   );

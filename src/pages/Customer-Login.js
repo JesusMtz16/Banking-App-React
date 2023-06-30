@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from '../assets/istockphoto-1215256045-612x612.jpg';
-import Login from '../Components/Login';
+import Login from '../Components/Login/Login';
+
 
 const CustomerLogin = () => {
     return (

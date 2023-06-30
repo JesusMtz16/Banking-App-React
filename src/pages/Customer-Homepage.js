@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
 import logo from '../assets/istockphoto-1215256045-612x612.jpg';
-import Login from '../Components/Login';
-import { Link } from 'react-router-dom'
+import Login from '../Components/Login/Login.js';
+import { Link } from 'react-router-dom';
+import React from 'react';
 
 
 const CustomerHomepage = () => {
@@ -13,6 +13,7 @@ const CustomerHomepage = () => {
                     <h1>Homepage</h1>
                 </div>
             </div>
+
             <Login />
             <div className='Auth-form-container'>
             <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
@@ -22,7 +23,15 @@ const CustomerHomepage = () => {
                 </Link>
                 </div>
             </div>
+
+            <div>
+                <footer className="footer">
+                    <p>© 2023 Cogent Banking App. All rights reserved.</p>
+                </footer>
+            </div>
         </div>
+
+
     )
 }
 

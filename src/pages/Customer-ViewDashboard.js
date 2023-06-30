@@ -8,6 +8,10 @@ import ViewStatement from "../Components/Customer-ViewStatement";
 
 
 
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
+
 
 const CustomerViewDashboard = () => {
   const [selectedLink, setSelectedLink] = useState(null);
@@ -44,38 +48,6 @@ const CustomerViewDashboard = () => {
           <span> | </span>
           <span>Welcome UserName</span>
         </div>
-      </div>
-      <div className="container">
-        <div className="sidebar">
-          <ul>
-            <li>
-              <button onClick={() => handleLinkClick("createAccount")}>
-                Create Account
-              </button>
-            </li>
-            <li>
-              <button onClick={() => handleLinkClick("addBeneficiary")}>
-                Add Beneficiary
-              </button>
-            </li>
-            <li>
-              <button onClick={() => handleLinkClick("removeBeneficiary")}>
-                Remove Beneficiary
-              </button>
-            </li>
-            <li>
-              <button onClick={() => handleLinkClick("transferMoney")}>
-                Transfer Money
-              </button>
-            </li>
-            <li>
-              <button onClick={() => handleLinkClick("viewStatement")}>
-                View Statement
-              </button>
-            </li>
-          </ul>
-        </div>
-        <div className="content">{renderContent()}</div>
       </div>
     </div>
   );
