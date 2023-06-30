@@ -1,12 +1,8 @@
 import React from "react";
 import logo from "../assets/istockphoto-1215256045-612x612.jpg";
-
-import { Link } from 'react-router-dom'
-
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-import Logout from '../components/Logout';
 
 
 const CustomerViewDashboard = () => {
