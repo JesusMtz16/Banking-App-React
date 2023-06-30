@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/istockphoto-1215256045-612x612.jpg";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import CreateAccount from "./Customer-CreateAccount";
 import AddBeneficiary from "./Customer-AddBeneficiary";
 import RemoveBeneficiary from "./Customer-RemoveBeneficiary";
@@ -8,6 +9,8 @@ import TransferAmount from "./Customer-TranseferAmount";
 import ViewStatement from "./Customer-ViewStatement";
 import Dashboard from "../Components/Dashboard";
 =======
+=======
+>>>>>>> 4a571c7 (Checked backend connection)
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
