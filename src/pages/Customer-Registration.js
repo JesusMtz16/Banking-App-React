@@ -2,30 +2,43 @@ import React, { useState } from 'react';
 import logo from '../assets/istockphoto-1215256045-612x612.jpg';
 export const CustomerRegistration = () => {
 
-  const [isUserNameAvailable, setIsUserNameAvailable] = useState(true);
+  
+  const [userName, setUserName] = useState('');
+  const [fullName, setFullName] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [isConfirmPasswordTouched, setIsConfirmPasswordTouched] = useState(false);
+  const [isUserNameAvailable, setIsUserNameAvailable] = useState(true);
+  const [passwordError, setPasswordError] = useState('');
+
+  const clearForm = () => {
+    setUserName('');
+    setFullName('');
+    setPassword('');
+    setConfirmPassword('');
+    setIsUserNameAvailable(true);
+    setPasswordError('');
+  };
+
+  const checkUserNameUniqueness = async () => {
+    // Perform an API call or any other validation check to determine if the user name is unique 
+    // and return a promise that resolves to true or false
+    if (userName === '') {
+      return true;
+    }
+    try {  
+      const apiUrl = process.env.REACT_APP_BACKEND_API;
+      const isUnique = await fetch(`${apiUrl}/api/customer/isUnique/${userName}`)
+        .then((response) => response.json());
+      return isUnique;
+    }
+    catch (error) {
+      console.error(error);
+      return false;
+    }
+  };
+
   const checkUserNameAvailability = (event) => {
-    const enteredUserName = event.target.value;
-    const checkUserNameUniqueness = async (enteredUserName) => {
-      // Perform an API call or any other validation check to determine if the user name is unique 
-      // and return a promise that resolves to true or false
-      if (enteredUserName === '') {
-        return true;
-      }
-      try {  
-        const apiUrl = process.env.REACT_APP_BACKEND_API;
-        const isUnique = await fetch(`${apiUrl}/api/customer/isUnique/${enteredUserName}`)
-          .then((response) => response.json());
-        return isUnique;
-      }
-      catch (error) {
-        console.error(error);
-        return false;
-      }
-    };
-    checkUserNameUniqueness(enteredUserName)
+    checkUserNameUniqueness(userName)
       .then((isUnique) => {
         setIsUserNameAvailable(isUnique);
       })
@@ -35,25 +48,50 @@ export const CustomerRegistration = () => {
       });
   };
   const handlePasswordChange = (event) => {
+    console.log('Password changed:', event.target.value);
     setPassword(event.target.value);
   };
-
-  const handleConfirmPasswordChange = (event) => {
-    setConfirmPassword(event.target.value);
-    setIsConfirmPasswordTouched(true);
+  const handleUsernameChange = (event) => {
+    console.log('Username changed:', event.target.value);
+    setUserName(event.target.value);
   };
-  const passwordsMatch = password === confirmPassword;
-  const passwordError = isConfirmPasswordTouched && !passwordsMatch ? 'Passwords do not match' : '';
+  const handleFullname = (event) => {
+    console.log('Fullname changed:', event.target.value);
+    setFullName(event.target.value);
+  };
+  
+  const handleConfirmPasswordChange = (event) => {
+    console.log('Confirmed password changed:', event.target.value);
+    setConfirmPassword(event.target.value);
+  };
 
-  const handleRegister = () => {
+  const handlePasswordBlur = (event) => {
+    if (password !== confirmPassword) {
+      setPasswordError('Passwords do not match');
+      return;
+    }
+    setPasswordError('');
+  };
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+
+    if ((password !== confirmPassword) || !isUserNameAvailable || (userName === '') || (fullName === '') || (password === '')) {
+      
+      return;
+    }
+
+    const apiUrl = process.env.REACT_APP_BACKEND_API;
+
     const customerData = {
-      username: document.getElementById('userName').value,
-      fullName: document.getElementById('fullName').value,
-      password: password,
+      'username': userName,
+      'fullName': fullName,
+      'password': password,
     };
 
+    console.log('New customer data:', customerData);
     // Send the customer data to the server using an HTTP request
-    fetch('your-server-endpoint', {
+    fetch(`${apiUrl}/api/customer/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -69,29 +107,34 @@ export const CustomerRegistration = () => {
         // Handle any errors that occur during the request
         console.error('Error creating new customer:', error);
       });
+    clearForm();
   };
 
   return (
     <div>
+      {/* 
+      
       <div className="header">
         <img src={logo} alt="Logo" className="logo" />
         <div className="header-text">
           <h1>Registration</h1>
         </div>
       </div>
+      
+      */}
 
       <div className='auth-form-container'>
 
-        <form className='Registration-form'>
-          <input type="text" placeholder="User Name" id="userName" required onBlur={checkUserNameAvailability} />
+        <form className='Registration-form' onSubmit={handleRegister}>
+          <input type="text" placeholder="User Name" id="userName" value={userName} required onChange={handleUsernameChange} onBlur={checkUserNameAvailability} />
           {!isUserNameAvailable && (
             <p style={{ color: 'red' }}>The user name is already taken. Please choose a different one.</p>
           )}
-          <input type="text" placeholder="Full Name" id="fullName" required />
+          <input type="text" placeholder="Full Name" id="fullName" value={fullName} onChange={handleFullname} required />
           <input type="password" placeholder="Password" id="password" value={password} onChange={handlePasswordChange} required />
-          <input type="password" placeholder="Confirm Password" id="confirmPassword" value={confirmPassword} onChange={handleConfirmPasswordChange} required />
+          <input type="password" placeholder="Confirm Password" id="confirmPassword" value={confirmPassword} onChange={handleConfirmPasswordChange}  onBlur={handlePasswordBlur}required />
           {passwordError && <p style={{ color: 'red' }}>{passwordError}</p>}
-          <button style={{ marginTop: '20px' }} onClick={handleRegister}>Register</button>
+          <button style={{ marginTop: '20px' }} type='submit' >Register</button>
         </form>
         <p>
           Already have a customer account?{' '}

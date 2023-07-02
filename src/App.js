@@ -12,7 +12,6 @@ import CustomerAddBeneficiary from './pages/Customer-AddBeneficiary';
 import CustomerRemoveBeneficiary from './pages/Customer-RemoveBeneficiary';
 import CustomerTranseferAmount from './pages/Customer-TranseferAmount';
 import CustomerViewStatement from './pages/Customer-ViewStatement';
-import StaffLogin from './pages/Staff-Login';
 import Dashboard from './Components/Dashboard';
 
 function App() {
