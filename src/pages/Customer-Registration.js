@@ -8,10 +8,22 @@ export const CustomerRegistration = () => {
   const [isConfirmPasswordTouched, setIsConfirmPasswordTouched] = useState(false);
   const checkUserNameAvailability = (event) => {
     const enteredUserName = event.target.value;
-    const checkUserNameUniqueness = (enteredUserName) => {
+    const checkUserNameUniqueness = async (enteredUserName) => {
       // Perform an API call or any other validation check to determine if the user name is unique 
       // and return a promise that resolves to true or false
-
+      if (enteredUserName === '') {
+        return true;
+      }
+      try {  
+        const apiUrl = process.env.REACT_APP_BACKEND_API;
+        const isUnique = await fetch(`${apiUrl}/api/customer/isUnique/${enteredUserName}`)
+          .then((response) => response.json());
+        return isUnique;
+      }
+      catch (error) {
+        console.error(error);
+        return false;
+      }
     };
     checkUserNameUniqueness(enteredUserName)
       .then((isUnique) => {
@@ -71,7 +83,7 @@ export const CustomerRegistration = () => {
       <div className='auth-form-container'>
 
         <form className='Registration-form'>
-          <input type="text" placeholder="User Name" id="userName" required onChange={checkUserNameAvailability} />
+          <input type="text" placeholder="User Name" id="userName" required onBlur={checkUserNameAvailability} />
           {!isUserNameAvailable && (
             <p style={{ color: 'red' }}>The user name is already taken. Please choose a different one.</p>
           )}
