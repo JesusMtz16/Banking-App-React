@@ -14,7 +14,6 @@ const CustomerLogin = () => {
             </div>
             <Login />
         </div>
-        
     )
 }
 

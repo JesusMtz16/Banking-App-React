@@ -4,9 +4,6 @@ import Button from 'react-bootstrap/Button';
 import logo from '../../assets/istockphoto-1215256045-612x612.jpg'; // Tell webpack this JS file uses this image
 import './Login.css'; // Import the CSS file for the component
 
-
-
-
 function Login() {
 
   const [username, setUsername] = useState('');
