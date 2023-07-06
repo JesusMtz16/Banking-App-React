@@ -9,25 +9,22 @@ import StaffEnableBlockCustomer from "./StaffEnableBlockCustomer";
 const StaffDashboard = () => {
   const [activeComponent, setActiveComponent] = useState(null);
 
-  const handleShowComponent = (component) => {
-    setActiveComponent(component);
-  };
-
   return (
-    <div className="p-3 mb-2 bg-white">
+    <div className="p-5 mb-5 bg-white">
       <div className="dashboard">
-        <Button onClick={() => handleShowComponent("StaffByAccountNumber")}>
+        <Button onClick={() => setActiveComponent("StaffByAccountNumber")}>
           By Account Number
         </Button>
-        <Button onClick={() => handleShowComponent("StaffApproveBeneficiary")}>
+        <Button onClick={() => setActiveComponent("StaffApproveBeneficiary")}>
           Approve Beneficiary
         </Button>
-        <Button onClick={() => handleShowComponent("StaffApproveAccount")}>
+        <Button onClick={() => setActiveComponent("StaffApproveAccount")}>
           Approve Account
         </Button>
-        <Button onClick={() => handleShowComponent("StaffEnableBlockCustomer")}>
+        <Button onClick={() => setActiveComponent("StaffEnableBlockCustomer")}>
           Enable/Block Customer
         </Button>
+
         {activeComponent === "StaffByAccountNumber" && <StaffByAccountNumber />}
         {activeComponent === "StaffApproveBeneficiary" && <StaffApproveBeneficiary />}
         {activeComponent === "StaffApproveAccount" && <StaffApproveAccount />}

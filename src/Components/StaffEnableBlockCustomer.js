@@ -1,9 +1,30 @@
 import React from 'react';
 
 const StaffEnableBlockCustomer = () => {
-    return(
+    
+    return (
         <div>
-            <h1>staff approve enable block works</h1>
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Customer ID</th>
+                        <th scope="col">Enable Disable</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rama</td>
+                        <td>12345</td>
+                        <td>enable, disable</td>
+                    </tr>
+                    <tr>
+                        <td>Sita</td>
+                        <td>65487</td>
+                        <td>enable, disable</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     )
 }
