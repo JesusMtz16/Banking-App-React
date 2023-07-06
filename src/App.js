@@ -13,6 +13,7 @@ import CustomerRemoveBeneficiary from './pages/Customer-RemoveBeneficiary';
 import CustomerTranseferAmount from './pages/Customer-TranseferAmount';
 import CustomerViewStatement from './pages/Customer-ViewStatement';
 import Dashboard from './Components/Dashboard';
+import Profile from './Components/Profile';
 
 import StaffViewDashboard from './pages/Staff-ViewDashboard';
 
@@ -32,6 +33,7 @@ function App() {
         <Route path="viewStatement" element={<CustomerViewStatement />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="staffDashboard" element={<StaffViewDashboard />} />
+        <Route path="profile" element={<Profile />} />
       </Routes>
 
       <footer className="footer">

@@ -10,6 +10,11 @@
 background-color: rgb(116, 149, 166);
 border-radius: 10px;
 padding: 20px;
+margin-top: 150px;
+margin-bottom: 150px;
+padding: 20px;
+overflow-y: auto;
+max-height: calc(100vh - 60px);
 } 
 .Registration-form{
   display: flex;
@@ -51,7 +56,7 @@ button{
   padding: 10px;
   width: 97%;
   position: fixed;
-  top: 10px; 
+  top: 0; 
   left: 10px;
   right: 10px;
   z-index: 9999;
