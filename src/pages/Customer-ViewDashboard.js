@@ -5,9 +5,8 @@ import AddBeneficiary from "./Customer-AddBeneficiary";
 import RemoveBeneficiary from "./Customer-RemoveBeneficiary";
 import TransferAmount from "./Customer-TranseferAmount";
 import ViewStatement from "./Customer-ViewStatement";
-import Dashboard from "../components/Dashboard";
-// import Col from 'react-bootstrap/Col';
-// import Row from 'react-bootstrap/Row';
+import Dashboard from "../Components/Dashboard";
+
 
 
 const CustomerViewDashboard = () => {

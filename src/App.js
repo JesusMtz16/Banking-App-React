@@ -12,7 +12,7 @@ import CustomerAddBeneficiary from './pages/Customer-AddBeneficiary';
 import CustomerRemoveBeneficiary from './pages/Customer-RemoveBeneficiary';
 import CustomerTranseferAmount from './pages/Customer-TranseferAmount';
 import CustomerViewStatement from './pages/Customer-ViewStatement';
-import Dashboard from './components/Dashboard';
+import Dashboard from './Components/Dashboard';
 
 import StaffViewDashboard from './pages/Staff-ViewDashboard';
 

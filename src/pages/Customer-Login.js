@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../assets/istockphoto-1215256045-612x612.jpg';
-import Login from '../components/Login/Login';
+import Login from '../Components/Login/Login';
 
 
 const CustomerLogin = () => {

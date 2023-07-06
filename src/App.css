@@ -120,12 +120,46 @@ label {
 }
 .container {
   display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+  width: 100%;
+  float: left;
 }
 
-.sidebar {
-  width: 200px;
+.sidebar {  
+  width: 250px;
+  background: #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  position: fixed;
+  z-index: 9999;
+  left: 10px;
+  top: 200px;
+
+
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+.sidebar button{
+
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  padding: 10px;
+  background-color: transparent;
+
 }
 
 .content {
   flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-left: 100px;
 }
