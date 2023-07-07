@@ -75,22 +75,27 @@ export const CustomerRegistration = () => {
 
   const handleRegister = (event) => {
     event.preventDefault();
-
-    if ((password !== confirmPassword) || !isUserNameAvailable || (userName === '') || (fullName === '') || (password === '')) {
-      
+  
+    if (
+      !userName ||
+      !fullName ||
+      !password ||
+      !confirmPassword ||
+      password !== confirmPassword ||
+      !isUserNameAvailable
+    ) {
+      alert('Please fill in all the fields correctly.');
       return;
     }
-
+  
     const apiUrl = process.env.REACT_APP_BACKEND_API;
-
+  
     const customerData = {
-      'username': userName,
-      'fullName': fullName,
-      'password': password,
+      username: userName,
+      fullName: fullName,
+      password: password,
     };
-
-    console.log('New customer data:', customerData);
-    // Send the customer data to the server using an HTTP request
+  
     fetch(`${apiUrl}/api/customer/register`, {
       method: 'POST',
       headers: {
@@ -100,29 +105,25 @@ export const CustomerRegistration = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Handle the response from the server
         console.log('New customer created:', data);
+        alert('Success! Customer registration is complete.');
+        clearForm();
       })
       .catch((error) => {
-        // Handle any errors that occur during the request
         console.error('Error creating new customer:', error);
+        alert('Failed to register customer. Please try again.');
       });
-    clearForm();
   };
+  
 
   return (
     <div>
-      {/* 
-      
       <div className="header">
         <img src={logo} alt="Logo" className="logo" />
         <div className="header-text">
           <h1>Registration</h1>
         </div>
       </div>
-      
-      */}
-
       <div className='auth-form-container'>
 
         <form className='Registration-form' onSubmit={handleRegister}>
@@ -138,7 +139,7 @@ export const CustomerRegistration = () => {
         </form>
         <p>
           Already have a customer account?{' '}
-          <a href="/login">
+          <a href="/">
             Log In Here
           </a>
         </p>

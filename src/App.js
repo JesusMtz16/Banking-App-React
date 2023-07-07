@@ -14,7 +14,6 @@ import CustomerTranseferAmount from './pages/Customer-TranseferAmount';
 import CustomerViewStatement from './pages/Customer-ViewStatement';
 import Dashboard from './Components/Dashboard';
 import Profile from './Components/Profile';
-
 import StaffViewDashboard from './pages/Staff-ViewDashboard';
 
 function App() {
@@ -35,6 +34,7 @@ function App() {
         <Route path="staffDashboard" element={<StaffViewDashboard />} />
         <Route path="profile" element={<Profile />} />
       </Routes>
+      
 
       <footer className="footer">
         <p className="footer-text">© 2023 Cogent Banking App. All rights reserved.</p>
