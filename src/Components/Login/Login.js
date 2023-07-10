@@ -4,10 +4,12 @@ import Button from 'react-bootstrap/Button';
 import logo from '../../assets/istockphoto-1215256045-612x612.jpg'; // Tell webpack this JS file uses this image
 import './Login.css'; // Import the CSS file for the component
 
-function Login() {
 
+function Login() {
+  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const loginHandler = async (event) => {
     event.preventDefault();
@@ -25,15 +27,22 @@ function Login() {
         }
       ),
     })
-    .then(response => console.log(response))
-    .catch(error => {
-      console.log('Error:', error);
-      if (error.response) {
-        console.log('Response:', error.response);
-      }
-    }
-    );
-
+    .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          sessionStorage.setItem('username', data.username);
+          sessionStorage.setItem('userId', data.userId);
+          sessionStorage.setItem('isLoggedIn', 'true');
+          setError('');
+          window.location.href = '/dashboard'; // Navigate to the dashboard component
+        } else {
+          setError('Wrong credentials');
+        }
+      })
+      .catch((error) => {
+        console.log('Error:', error);
+        setError('An error occurred');
+      });
   };
 
   const handleUsernameChange = (event) => {
@@ -59,18 +68,16 @@ function Login() {
           <form onSubmit={loginHandler}>
             <h3 className="form-heading">Log In</h3>
             <div className="form-group">
-              <input type="text" className="form-control" placeholder="Enter User Name" value={username} onChange={handleUsernameChange}/>
+              <input type="text" className="form-control" placeholder="Enter User Name" value={username} required onChange={handleUsernameChange}/>
             </div>
             <div className="form-group">
-              <input type="password" className="form-control" placeholder="Enter Password" value={password} onChange={handlePasswordChange}/>
+              <input type="password" className="form-control" placeholder="Enter Password" value={password} required onChange={handlePasswordChange}/>
             </div>
-            
-            <div className='forgot-password-container'>
-              <a href="/forgotPassword" className="forgot-password">Forgot password</a>
-            </div>
-
-            <div className="form-footer">
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+            <div>
               <Button type="submit" className="login-button">Login</Button>
+              <span style={{ marginRight: '10px' }} />
+               <a href="/forgotPassword" className="forgot-password">Forgot password</a>
             </div>
           </form>
           <footer className="footer">
