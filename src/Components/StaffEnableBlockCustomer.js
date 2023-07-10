@@ -1,11 +1,14 @@
 import React from 'react';
 
 const StaffEnableBlockCustomer = () => {
-    
+
     return (
         <div>
             <table className="table">
                 <thead>
+                    <tr>
+                        <th colspan="3" align="center">Enable Disable Customer</th>
+                    </tr>
                     <tr>
                         <th scope="col">Customer Name</th>
                         <th scope="col">Customer ID</th>

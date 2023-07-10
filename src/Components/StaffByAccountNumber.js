@@ -5,6 +5,9 @@ const StaffByAccountNumber = () => {
     <table className="table">
       <thead>
         <tr>
+          <th colspan="4" align="center">Account Details</th>
+        </tr>
+        <tr>
           <th scope="col">Date</th>
           <th scope="col">Reference</th>
           <th scope="col">Amount</th>

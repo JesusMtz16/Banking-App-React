@@ -1,5 +1,5 @@
 import logo from '../assets/istockphoto-1215256045-612x612.jpg';
-import Login from '../Components/Login/Login.js';
+import Login from '../components/Login/Login.js';
 import { Link } from 'react-router-dom';
 import React from 'react';
 
