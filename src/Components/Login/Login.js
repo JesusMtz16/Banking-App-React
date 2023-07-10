@@ -30,9 +30,11 @@ function Login() {
     .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          
+          sessionStorage.setItem('username', data.username);
+          sessionStorage.setItem('userId', data.userId);
+          sessionStorage.setItem('isLoggedIn', 'true');
           setError('');
-          window.location.href = '/customer-view-dashboard'; // Navigate to the dashboard component
+          window.location.href = '/dashboard'; // Navigate to the dashboard component
         } else {
           setError('Wrong credentials');
         }

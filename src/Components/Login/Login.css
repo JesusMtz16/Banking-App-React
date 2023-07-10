@@ -75,4 +75,9 @@
   .footer-text {
     color: #ffffff;
   }
-  
+  .logout-button {
+    background: none;
+    border: none;
+    color: blue;
+    text-decoration: underline;
+  }
