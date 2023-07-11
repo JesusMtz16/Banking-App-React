@@ -41,7 +41,7 @@ function Login() {
       })
       .catch((error) => {
         console.log('Error:', error);
-        setError('An error occurred');
+        setError('Wrong credentials');
       });
   };
 
