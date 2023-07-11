@@ -20,7 +20,7 @@ const Profile = () => {
           <div className="header-text">
             <a href="/profile">Profile</a>
             <span> | </span>
-            <a href="/logout">Logout</a>
+            <a href="/">Logout</a>
             <span> | </span>
             <span>Welcome UserName</span>
           </div>
