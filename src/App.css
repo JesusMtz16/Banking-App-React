@@ -168,3 +168,29 @@ label {
   padding: 20px;
   margin-left: 100px;
 }
+.account-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgb(116, 149, 166);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.account-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.account-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-check-label {
+  margin-right: 5px;
+}
