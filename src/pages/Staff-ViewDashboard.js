@@ -1,7 +1,7 @@
 import React from 'react';
 
 import logo from "../assets/istockphoto-1215256045-612x612.jpg";
-import StaffDashboard from '../components/StaffDashboard';
+import StaffDashboard from '../Components/StaffDashboard';
 
 const StaffViewDashboard = () => {
     return (

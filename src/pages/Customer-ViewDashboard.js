@@ -5,7 +5,7 @@ import AddBeneficiary from "./Customer-AddBeneficiary";
 import RemoveBeneficiary from "./Customer-RemoveBeneficiary";
 import TransferAmount from "./Customer-TranseferAmount";
 import ViewStatement from "./Customer-ViewStatement";
-import Dashboard from "../components/Dashboard";
+import Dashboard from "../Components/Dashboard";
 
 
 
